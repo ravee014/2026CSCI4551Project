@@ -3,13 +3,14 @@ project(campus_sim)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY
-  config
-  data
-  launch
-  models
-  worlds
+install(
+  DIRECTORY worlds models config launch data rviz
   DESTINATION share/${PROJECT_NAME}
+)
+
+install(
+  PROGRAMS scripts/odom_tf_broadcaster.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 ament_package()
