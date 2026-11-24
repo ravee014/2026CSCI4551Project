@@ -83,6 +83,11 @@ def generate_launch_description():
         condition=IfCondition(use_rviz),
         output='screen'
     )
+    planner = Node(
+        package='route_planner',
+        executable='route_planner',
+        output='screen'
+    )
 
     return LaunchDescription([
         headless_arg,
@@ -95,4 +100,8 @@ def generate_launch_description():
         lidar_static_tf,
         imu_static_tf,
         rviz_node,
+        set_gz_resource,
+        gz_sim,
+        bridge,
+        planner,
     ])
