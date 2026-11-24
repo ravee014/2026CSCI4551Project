@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="umn_campus">
+    <static>true</static>
+    <link name="map">
+      <!-- satellite-textured ground (also what the LiDAR hits at foot level) -->
+      <visual name="terrain_visual">
+        <geometry><mesh><uri>meshes/terrain.obj</uri></mesh></geometry>
+      </visual>
+      <collision name="terrain_collision">
+        <geometry><mesh><uri>meshes/terrain.obj</uri></mesh></geometry>
+      </collision>
+      <!-- extruded building footprints (no interiors) -->
+      <visual name="buildings_visual">
+        <geometry><mesh><uri>meshes/buildings.obj</uri></mesh></geometry>
+      </visual>
+      <collision name="buildings_collision">
+        <geometry><mesh><uri>meshes/buildings.obj</uri></mesh></geometry>
+      </collision>
+      <visual name="parks_visual">
+        <geometry><mesh><uri>meshes/parks.obj</uri></mesh></geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
